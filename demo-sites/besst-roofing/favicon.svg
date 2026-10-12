@@ -1,0 +1,1 @@
+Lovable API error: 404 file_not_found: Not Found
