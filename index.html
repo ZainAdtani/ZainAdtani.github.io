@@ -1,325 +1,290 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zain Adtani | AI Consultant, Financial Professional, Author</title>
+<meta name="description" content="Zain Adtani is an AI consultant, licensed financial professional, and author in Dallas Fort Worth, Texas. He builds practical AI tools for local businesses and families.">
+<style>
+  :root{
+    --bg:#0a0e14;
+    --bg-soft:#0e131c;
+    --card:#121926;
+    --card-hover:#16202f;
+    --line:#1f2a3d;
+    --text:#e8eef7;
+    --muted:#9fb0c6;
+    --faint:#6b7d95;
+    --accent:#4da3ff;
+    --accent-ink:#06263f;
+    --radius:16px;
+    --max:1080px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-<!--
-	Zain's Portfolio Website
--->
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:10;
+    background:rgba(10,14,20,.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:16px;flex-wrap:wrap}
+  .brand{font-size:1.05rem;font-weight:700;letter-spacing:.02em;color:var(--text)}
+  .brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:26px;flex-wrap:wrap}
+  .nav-links a{color:var(--muted);font-size:.95rem;font-weight:500}
+  .nav-links a:hover{color:var(--text);text-decoration:none}
 
-<html>
-	<head>
-		<title>Zain's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+  /* Hero */
+  .hero{padding:96px 0 72px}
+  .hero .kicker{
+    display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);
+    border:1px solid var(--line);border-radius:999px;padding:6px 14px;margin-bottom:26px;
+    background:var(--bg-soft);
+  }
+  .hero h1{font-size:3.4rem;line-height:1.08;font-weight:800;letter-spacing:-.01em;margin-bottom:18px}
+  .hero .role{font-size:1.45rem;font-weight:600;color:var(--text);margin-bottom:18px;max-width:720px}
+  .hero .role em{font-style:normal;color:var(--accent)}
+  .hero .sub{font-size:1.08rem;color:var(--muted);max-width:640px;margin-bottom:14px}
+  .hero .loc{font-size:.98rem;color:var(--faint);margin-bottom:36px}
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:13px 26px;border-radius:999px;
+    font-size:1rem;font-weight:600;border:1px solid var(--line);
+    color:var(--text);background:var(--card);
+    transition:background .15s ease,border-color .15s ease,transform .15s ease;
+  }
+  .btn:hover{text-decoration:none;background:var(--card-hover);transform:translateY(-1px)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+  .btn.primary:hover{background:#6cb4ff}
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+  /* Sections */
+  section{padding:56px 0}
+  .section-head{margin-bottom:30px}
+  .section-head h2{font-size:1.9rem;font-weight:750;letter-spacing:-.01em;margin-bottom:8px}
+  .section-head p{color:var(--muted);max-width:640px;font-size:1.02rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+  .grid.two{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;display:flex;flex-direction:column;gap:10px;
+    transition:background .15s ease,border-color .15s ease,transform .15s ease;
+  }
+  .card:hover{background:var(--card-hover);border-color:#2a3a55;transform:translateY(-2px)}
+  .card .tag{
+    font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+  }
+  .card h3{font-size:1.18rem;font-weight:700;line-height:1.35}
+  .card p{color:var(--muted);font-size:.98rem;flex:1}
+  .card .go{font-weight:600;font-size:.95rem}
+  .card .go::after{content:" →"}
+  .card.plain:hover{transform:none}
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Zain's Portfolio<br />
-						</h1>
-						<p>Cloud Practitioner | Data Analyst | Mechanical Engineer </p>
-						<p>Skilled in SQL, Python, AWS, Power BI </p>                              
-						</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+  /* Skills */
+  .skills{display:flex;flex-wrap:wrap;gap:12px}
+  .skill{
+    border:1px solid var(--line);background:var(--bg-soft);border-radius:999px;
+    padding:9px 20px;font-size:.98rem;font-weight:600;color:var(--text);
+  }
+  .skill b{color:var(--accent);font-weight:600}
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Zain's Projects</a>
-					</header>
+  /* Contact */
+  .contact{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:44px;text-align:left;
+  }
+  .contact h2{font-size:1.9rem;font-weight:750;margin-bottom:10px}
+  .contact p{color:var(--muted);max-width:560px;margin-bottom:28px;font-size:1.02rem}
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
-							
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/zka1/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-							<li><a href="https://github.com/ZainAdtani" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-					</nav>
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:30px 0 42px;margin-top:24px}
+  .foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--faint);font-size:.92rem}
+  .foot a{color:var(--muted)}
 
-				<!-- Main -->
-					<div id="main">
+  @media (max-width:640px){
+    .hero{padding:64px 0 48px}
+    .hero h1{font-size:2.4rem}
+    .hero .role{font-size:1.2rem}
+    section{padding:40px 0}
+    .contact{padding:30px 24px}
+    .nav-links{gap:18px}
+  }
+</style>
+</head>
+<body>
 
-						<!-- Featured Post -->
-						<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="https://public.3.basecamp.com/p/G88ZFA2AsQbB3vDNUrd3r1vS">Power BI: Employee Attrition<br /> 
-									</a></h2>
-									<p>
-									This dataset offers a comprehensive analysis of an organization's employees, focusing on factors such as attrition, personal and job-related details, and financial information. It includes age, gender, marital status, business travel frequency, pay rate, departmental information, and job-specific details. The dataset also covers salary hikes, performance ratings, relationship satisfaction, monthly income, previous work experience, and retirement status. Studying this dataset gives us insights into the changing workforce management philosophies influenced by technological advancements.
-										Click the enticing "VIEW PROJECT" button to explore a comprehensive analysis.
-									</p>
-								</header>
-								<iframe title="Employee Atrrition" width="900" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiNmE4NDcyYjAtMzBhOC00MDFjLTljNDAtNWIzNjQ5MTNlZjZhIiwidCI6IjU0NGZkN2MzLTAxNGItNDkwYS04OThhLWViNDliYWQ3ZTNiNSJ9&pageName=ReportSectionf9ab0f67cd1709b60077" frameborder="0" allowFullScreen="true"></iframe>
-								<ul class="actions special">
-									<li><a href="https://public.3.basecamp.com/p/G88ZFA2AsQbB3vDNUrd3r1vS" class="button large">View project</a></li>
-								</ul>
-							</article>
-						
-							<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="https://public.3.basecamp.com/p/QNivHr3mYfn2fwhEiXwbQXFz">Power BI: Adidas US Sales<br /> 
-									</a></h2>
-									<p>
-									The aim of this project is to assess the sales of Adidas USA during the period of 2020-2021. The report will examine vital metrics including overall sales, monthly sales, monthly sales growth rate, total operating profit, operating profit margin, and monthly profit margin change. This analysis will provide valuable insights to enhance the company's sales performance and guide future improvement strategies. Let the dashboard speak for itself.
-										Please click the enticing "VIEW PROJECT" button to explore a comprehensive analysis that showcases Adidas' exceptional performance and achievements.
-									</p>
-								</header>
-								<iframe title="Adidas Power BI Project_Zain" width="900" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiMTU0ZDBiMDAtNTU5ZS00ZjI3LTliNjktNzIzOTgyZjgyNmUwIiwidCI6IjU0NGZkN2MzLTAxNGItNDkwYS04OThhLWViNDliYWQ3ZTNiNSJ9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>
-								<ul class="actions special">
-									<li><a href="https://public.3.basecamp.com/p/QNivHr3mYfn2fwhEiXwbQXFz" class="button large">View project</a></li>
-								</ul>
-							</article>
+<header>
+  <div class="wrap nav">
+    <div class="brand">Zain Adtani<span>.</span></div>
+    <nav class="nav-links">
+      <a href="https://zainadtani.com">zainadtani.com</a>
+      <a href="https://github.com/ZainAdtani">GitHub</a>
+      <a href="https://linkedin.com/in/zainadtani">LinkedIn</a>
+    </nav>
+  </div>
+</header>
 
-							<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="https://public.3.basecamp.com/p/jPrf9AoKSFqHKWGioqXhyefr">Power BI: Financial Dashboard<br /> 
-									</a></h2>
-									<p>
-										Welcome to my captivating financial dashboard, where we analyze diverse sales transactions across countries. Uncover hidden stories through advanced visualizations and insightful KPIs. Explore metrics like total cost of gross sales, net sales, total quantity sold, and total profit to make informed decisions. Join us in unraveling the mysteries of financial data and unlocking its true potential. Welcome to a world of data-driven discovery and enlightenment in finance.
-										Please click the enticing "VIEW PROJECT" button to get the dataset.
-									</p>
-								</header>
-								<iframe title="Report Section" width="900" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiZGI4MTdiY2UtNWZiMS00NmY4LTk0MjUtMzA2ZjRhYWU4MjdiIiwidCI6IjU0NGZkN2MzLTAxNGItNDkwYS04OThhLWViNDliYWQ3ZTNiNSJ9" frameborder="0" allowFullScreen="true"></iframe>
-									<li><a href="https://public.3.basecamp.com/p/jPrf9AoKSFqHKWGioqXhyefr" class="button large">View project</a></li>
-								</ul>
-							</article>
+<main class="wrap">
 
-							<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="https://public.3.basecamp.com/p/Vdc3CEYBP9bPASF5x2Cujopa">Power BI: Prime Video <br /> 
-									</a></h2>
-									<p>
-									Introducing the Amazon Prime Video Analytics Dashboard - a comprehensive and visually engaging platform designed to explore the vast world of entertainment. This Power BIA dashboard boasts six key performance indicator (KPI) cards, providing valuable insights such as Total Title Ratings, Genres, Directors, Start Date, Early Start Date (1920), and Latest Start Date (2021). The dashboard also features informative Bar Charts for Total Shows by Ratings and Genres, a dynamic Map Visual showcasing Total Shows by Country, and an insightful Area Line Chart comparing Total Shows by Release Year for both movies and TV shows. Additionally, a visually appealing Doughnut Chart breaks down the distribution of movies and TV shows. With its sleek and organized presentation, this Amazon Prime Video dashboard is the perfect addition to your portfolio, allowing viewers to discover, analyze, and appreciate the captivating world of streaming entertainment.
-										Please click the enticing "VIEW PROJECT" button to get the dataset.
-								</header>
-								<iframe title="Report Section" width="900" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiZWRkYzJiMTgtOTVjOS00ZjU3LTljNjgtNWQ4MzczNTZjYjZlIiwidCI6IjU0NGZkN2MzLTAxNGItNDkwYS04OThhLWViNDliYWQ3ZTNiNSJ9" frameborder="0" allowFullScreen="true"></iframe>								<ul class="actions special">
-									<li><a href="https://public.3.basecamp.com/p/Vdc3CEYBP9bPASF5x2Cujopa" class="button large">View project</a></li>
-								</ul>
-							</article>
+  <div class="hero">
+    <span class="kicker">Portfolio</span>
+    <h1>Zain Adtani</h1>
+    <p class="role">AI consultant, <em>licensed financial professional</em>, and author.</p>
+    <p class="sub">I build practical AI tools for local businesses and families, and I come from data: Power BI developer work, SQL, Python, and AWS.</p>
+    <p class="loc">Dallas Fort Worth, Texas.</p>
+    <div class="btn-row">
+      <a class="btn primary" href="https://zainadtani.com">See my business site</a>
+      <a class="btn" href="https://calendly.com/zkadtani/job">Book a call</a>
+    </div>
+  </div>
 
-							<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="https://public.3.basecamp.com/p/wCWauqvBbUifPGSzgC9kuZMp">Power BI: Netflix Analytics<br /> 
-									</a></h2>
-									<p>
-									Discover the Netflix Analytics Dashboard - a visually engaging platform that unlocks the vast world of streaming entertainment. With six essential KPI cards, explore Total Titles, Ratings, and diverse Genres. Uncover global insights with an interactive Map Visual of content distribution across countries. Delve into the Top 10 Countries by Movies and TV Shows, and journey through time with Release Dates displayed on Bar and Line Charts. Unearth viewers' preferences with the Ratings chart and savor a doughnut chart showcasing content distribution. Sleek and insightful, this Netflix Analytics Dashboard is a must-have for entertainment enthusiasts and industry analysts to explore, analyze, and appreciate the captivating world of Netflix's streaming empire.
-										Please click the enticing "VIEW PROJECT" button to get the dataset.
-									</p>
-								</header>
-								<iframe title="Report Section" width="900" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiMzRmNDVmMTItZGI4MS00ZTVlLThhZjItNzZkYTBjOWRiMjc3IiwidCI6IjU0NGZkN2MzLTAxNGItNDkwYS04OThhLWViNDliYWQ3ZTNiNSJ9" frameborder="0" allowFullScreen="true"></iframe>									
-								<ul class="actions special">
-									<li><a href="https://public.3.basecamp.com/p/wCWauqvBbUifPGSzgC9kuZMp" class="button large">View project</a></li>
-								</ul>
-							</article>
+  <section id="building">
+    <div class="section-head">
+      <h2>Building now</h2>
+      <p>Live tools and apps, built for real people and small businesses.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">Free tool</span>
+        <h3>Missed Call Money Calculator</h3>
+        <p>A free tool that shows a local business what its missed calls cost every month.</p>
+        <a class="go" href="https://zainadtani.github.io/missed-call-calculator/">Try the calculator</a>
+      </div>
+      <div class="card">
+        <span class="tag">iPhone app</span>
+        <h3>BuzzerBlock</h3>
+        <p>An iPhone app that shows your teams scores without spoilers.</p>
+        <a class="go" href="https://apps.apple.com/app/id6832104995">View on the App Store</a>
+      </div>
+      <div class="card">
+        <span class="tag">iPhone app</span>
+        <h3>NOMsters</h3>
+        <p>A playful food adventure app for families.</p>
+        <a class="go" href="https://apps.apple.com/app/id6815714189">View on the App Store</a>
+      </div>
+      <div class="card">
+        <span class="tag">iPhone app</span>
+        <h3>PathFolk</h3>
+        <p>An app for guided reflection and journaling.</p>
+        <a class="go" href="https://apps.apple.com/app/pathfolk/id6818683420">View on the App Store</a>
+      </div>
+      <div class="card">
+        <span class="tag">iPhone app</span>
+        <h3>Zigest</h3>
+        <p>Turns long videos into short, clear digests.</p>
+        <a class="go" href="https://apps.apple.com/app/zigest-video-digests/id6834177603">View on the App Store</a>
+      </div>
+    </div>
+  </section>
 
-						
+  <section id="data">
+    <div class="section-head">
+      <h2>Data work</h2>
+      <p>Before the AI work, I built dashboards for a living as a Power BI developer.</p>
+    </div>
+    <div class="grid">
+      <div class="card plain">
+        <span class="tag">Power BI</span>
+        <h3>Employee Attrition</h3>
+        <p>HR analytics on what makes people stay or leave.</p>
+      </div>
+      <div class="card plain">
+        <span class="tag">Power BI</span>
+        <h3>Adidas US Sales</h3>
+        <p>Sales and profit across 2020 to 2021.</p>
+      </div>
+      <div class="card plain">
+        <span class="tag">Power BI</span>
+        <h3>Financial Dashboard</h3>
+        <p>Sales, cost, and profit across countries.</p>
+      </div>
+      <div class="card plain">
+        <span class="tag">Power BI</span>
+        <h3>Netflix Analytics</h3>
+        <p>Titles, ratings, and viewing trends.</p>
+      </div>
+      <div class="card plain">
+        <span class="tag">Power BI</span>
+        <h3>Microsoft Income Statement</h3>
+        <p>A full income statement as a live dashboard.</p>
+      </div>
+      <div class="card plain">
+        <span class="tag">Power BI</span>
+        <h3>UK Bank Customer Insights</h3>
+        <p>Balances by region, age, and job type.</p>
+      </div>
+    </div>
+  </section>
 
-							<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="https://public.3.basecamp.com/p/V1X3E1gjwaDD1kdfNeX1vgjS">Power BI: Pokemon Dashboard <br /> 
-									</a></h2>
-									<p>
-									Hey there, fellow Pokémon enthusiasts! Welcome to my ultimate Poké-dashboard extravaganza on Power BI! Get ready to catch 'em all, from the ancient first-gen cuties to the latest sassy critters. You'll be amazed by the HP, capture rate, types, and wild abilities these adorable creatures possess. And hey, don't worry, I made sure the design is cooler than a Squirtle in sunglasses! So, buckle up, 'cause this project is like my Jigglypuff serenading its first gig - a bit nerve-wracking, but guaranteed to put a smile on your face! Let's embark on this Poké-adventure together! Gotta data mine 'em all! 😄🌟
-									</p>
-								</header>
-								<iframe title="Report Section" width="900" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiYzk1OTUwZTEtYTk0Yi00OGVhLWI5YzYtNDJhYTVkNmIxNzczIiwidCI6IjU0NGZkN2MzLTAxNGItNDkwYS04OThhLWViNDliYWQ3ZTNiNSJ9" frameborder="0" allowFullScreen="true"></iframe>
-								<ul class="actions special">
-								<li><a href="https://public.3.basecamp.com/p/V1X3E1gjwaDD1kdfNeX1vgjS" class="button large">View project</a></li>
-								</ul>
-							</article>
-					
+  <section id="background">
+    <div class="section-head">
+      <h2>Background</h2>
+    </div>
+    <div class="grid">
+      <div class="card plain">
+        <span class="tag">Experience</span>
+        <p style="color:var(--text)">Power BI Developer, Colaberry School of Data Analytics, 2023 to 2024.</p>
+      </div>
+      <div class="card plain">
+        <span class="tag">Education</span>
+        <p style="color:var(--text)">B.S. Mechanical Engineering, UT San Antonio, 2022. Senior design: a remote controlled device built to handle small crucibles in high radiation areas, with haptic feedback.</p>
+      </div>
+      <div class="card plain">
+        <span class="tag">Certification</span>
+        <p style="color:var(--text)">AWS Certified Cloud Practitioner, 2023.</p>
+      </div>
+    </div>
+  </section>
 
-							<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="https://public.3.basecamp.com/p/HeoKFD9w9uyH742599nLjXE3">Power BI: US Coffee Shop<br /> 
-									</a></h2>
-									<p>
-									The Coffee Chain is a popular cafeteria operating in four markets across 20 states, offering a range of products. This report aims to identify profitability issues and their causes, utilizing Power BI and Tableau software for analysis. Key metrics such as Sales Per Month, YOY%, GPM%, and GPM YOY% have been calculated to evaluate store profitability. The report highlights underperforming products and their contributing factors.
-										Please click the enticing "VIEW PROJECT" button to explore a comprehensive analysis.
-									</p>
-								</header>
-								<iframe title="US Coffee Power BI Project_Zain - US Coffee" width="900" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiY2U0YzFjMTctN2NiYi00ZjA2LTk2YTYtZmQ5ZTcxYWY4ZjdiIiwidCI6IjU0NGZkN2MzLTAxNGItNDkwYS04OThhLWViNDliYWQ3ZTNiNSJ9" frameborder="0" allowFullScreen="true"></iframe>
-								<ul class="actions special">
-									<li><a href="https://public.3.basecamp.com/p/HeoKFD9w9uyH742599nLjXE3" class="button large">View project</a></li>
-								</ul>
-							</article>
+  <section id="skills">
+    <div class="section-head">
+      <h2>Skills</h2>
+    </div>
+    <div class="skills">
+      <span class="skill">SQL</span>
+      <span class="skill">Python</span>
+      <span class="skill">Power BI</span>
+      <span class="skill">AWS</span>
+      <span class="skill">AI tools</span>
+      <span class="skill">App building</span>
+    </div>
+  </section>
 
+  <section id="contact">
+    <div class="contact">
+      <h2>Work with me</h2>
+      <p>If you run a local business or lead a family and want practical AI help, or a clearer picture of your money, start with a short call.</p>
+      <div class="btn-row">
+        <a class="btn primary" href="mailto:zkadtani@gmail.com">Email me</a>
+        <a class="btn" href="https://calendly.com/zkadtani/job">Book a call</a>
+        <a class="btn" href="https://linkedin.com/in/zainadtani">LinkedIn</a>
+        <a class="btn" href="https://github.com/ZainAdtani">GitHub</a>
+        <a class="btn" href="https://zainadtani.com">zainadtani.com</a>
+      </div>
+    </div>
+  </section>
 
-						
-						<!-- Posts -->
-							<section class="posts">
+</main>
 
-								<article>
-									<header>
-									
-										<h2><a href="https://public.3.basecamp.com/p/jqYMw2PnSMnmEZPj5ESEu5hr">Power BI: UK Bank Customer Insights <br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="" alt="" /></a>
-									<p> Introducing the "UK Bank Customer Insights" Power PI project! Leveraging the Kaggle dataset, this dynamic dashboard offers compelling visuals like donut charts to highlight gender-based balances, region-wise and job classification-based summaries, and age and gender ratio analyses. Accompanied by insightful KPI cards, this project provides a comprehensive view of the UK bank's diverse clientele, facilitating informed decision-making and strategic planning.
-										Please click the enticing "VIEW PROJECT" button to find the dataset.
-									</p>
-									</header>
-									<iframe title="Report Section" width="500" height="370" src="https://app.powerbi.com/view?r=eyJrIjoiZjVjMmNhMDEtYzE2YS00YzczLTlmMzAtMTljYTQ2MmEzZjhjIiwidCI6IjU0NGZkN2MzLTAxNGItNDkwYS04OThhLWViNDliYWQ3ZTNiNSJ9" frameborder="0" allowFullScreen="true"></iframe>
-									<ul class="actions special">
-									<li><a href="https://public.3.basecamp.com/p/jqYMw2PnSMnmEZPj5ESEu5hr" class="button large">View project</a></li>
-								</ul>
-							</article>
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Zain Adtani</span>
+    <a href="https://zainadtani.com">zainadtani.com</a>
+  </div>
+</footer>
 
-								<article>
-									<header>
-									
-										<h2><a href="https://public.3.basecamp.com/p/ySH6wE1nb9Lud1kTofN7hKit">Power BI: Microsoft Income Statement<br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="" alt="" /></a>
-									<p> I successfully completed a project focused on building an income statement dashboard using Power BI. Leveraging data sourced from Microsoft's investor website, I meticulously imported and transformed the information, resulting in visually compelling tables, cards, and charts. This project has equipped me with the expertise to proficiently create comprehensive financial statement dashboards enriched with diverse and impactful visualizations.
-										Please click the enticing "VIEW PROJECT" button to find the dataset and steps.
-									</p>
-									</header>
-									<iframe title="Microsoft Income Statement - Page 1" width="500" height="370" src="https://app.powerbi.com/view?r=eyJrIjoiOWQ5NGZjODUtNGRiOC00ZmI3LTk5ZmYtYWRjMWVhNDY3MTQxIiwidCI6IjU0NGZkN2MzLTAxNGItNDkwYS04OThhLWViNDliYWQ3ZTNiNSJ9" frameborder="0" allowFullScreen="true"></iframe>
-									<ul class="actions special">
-									<li><a href="https://public.3.basecamp.com/p/ySH6wE1nb9Lud1kTofN7hKit" class="button large">View project</a></li>
-								</ul>
-							</article>
-
-								<article>
-									<header>
-									
-										<h2><a href="https://3.basecamp.com/3945211/buckets/33108126/todolists/6262569417">Power BI: Superstore Sales & Profit<br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="" alt="" /></a>
-									<p> The dashboard I created presents a basic yet informative overview of sales and profits for a Superstore. It includes a map visualization showcasing sales by city and region, a pie chart illustrating sales distribution across different regions, and stacked bar charts 
-										representing sales by customer segment. Additionally, the dashboard features KPI cards displaying important metrics such as sales orders and profit. It provides a concise snapshot of the Superstore's performance, allowing for better understanding and decision-making.
-										Please click the enticing "VIEW PROJECT" button to find the dataset.
-									</p>
-									</header>
-									<iframe title="Superstore Sales & Profit - Sales Dashboard" width="500" height="370" src="https://app.powerbi.com/view?r=eyJrIjoiNGQyYzMyODMtMDA3OS00YmFiLTk3ODYtMzYzMDBiNDhhNGE0IiwidCI6IjU0NGZkN2MzLTAxNGItNDkwYS04OThhLWViNDliYWQ3ZTNiNSJ9" frameborder="0" allowFullScreen="true"></iframe>
-									<ul class="actions special">
-									<li><a href="https://3.basecamp.com/3945211/buckets/33108126/todolists/6262569417" class="button large">View project</a></li>
-								</ul>
-							</article>
-
-								<article>
-									<header>
-										
-										<h2><a href="https://public.3.basecamp.com/p/grUxq98Q7hVqRyqatzPRZL9p">Mechanical Engineering: Senior Design Project<br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/SD(REMA)-transformed.jpeg" alt="" /></a>
-									<p>
-										Developed a cutting-edge device capable of withstanding high levels of radiation exposure, remotely controlled using a joystick, flex sensors, and a potentiometer for precise manipulation of small crucibles. Elevating the user experience, the device incorporates haptic feedback, providing users with a tactile sensation when securely grasping components.
-									</p>
-									</header>
-									<a href="https://public.3.basecamp.com/p/grUxq98Q7hVqRyqatzPRZL9p" class="image fit"><img src="images/Senior_Design-transformed.webp" alt="" /></a>
-									<ul class="actions special">
-										<li><a href="https://public.3.basecamp.com/p/grUxq98Q7hVqRyqatzPRZL9p" class="button">View project</a></li>
-									</ul>
-								</article>
-
-
-								<article>
-									<header>
-										
-										<h2><a href="https://scratch.mit.edu/projects/866833288">Scratch Project: Hoops Havoc <br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="" alt="" /></a>
-									<p>
-										Get ready for some bouncy fun in "Hoops Havoc"! In this Scratch project, you'll be catching basketballs while trying to dodge soccer balls and baseballs. Use the arrow keys to move your player sprite and score points by nabbing those basketballs. But watch out! If you get hit by the other balls, you'll lose lives. I made sure to include conditionals, loops, and variables to spice things up. 
-										To top it off, I created my very own custom block, which takes some input. So, let's jump in and have a ball with "Hoops Havoc"!
-									</p>
-									</header>
-									<iframe src="https://scratch.mit.edu/projects/866833288/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
-									<ul class="actions special">
-										<li><a href="https://scratch.mit.edu/projects/866833288" class="button">View project</a></li>
-									</ul>
-								</article>
-
-								
-								<article>
-									<header>
-									
-										<h2><a href="#">The project is still in my head but it's starting to take shape, come back later to see what it looks like<br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="" alt="" /></a>
-									<p>...</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">View project</a></li>
-									</ul>
-								</article>
-
-								<article>
-									<header>
-										
-										<h2><a href="#">Still a work in progress, come back later for a sneak peek 👀 <br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="" alt="" /></a>
-									<p>...</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">View project</a></li>
-									</ul>
-								</article>
-	
-
-						<section class="split contact">
-							<section class="alt">
-								<h3>Location</h3>
-								<p>Dallas, Tx<br />
-								</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(817) 629-8220</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">zkadtani@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/zka1/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-									<li><a href="https://github.com/ZainAdtani" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>
