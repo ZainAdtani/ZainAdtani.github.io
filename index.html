@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zain Adtani | AI Consultant, Financial Professional, Author</title>
 <meta name="description" content="Zain Adtani is an AI consultant, licensed financial professional, and author in Dallas Fort Worth, Texas. He builds practical AI tools for local businesses and families.">
+<meta name="theme-color" content="#0a0e14">
+<meta property="og:title" content="Zain Adtani | AI Consultant, Financial Professional, Author">
+<meta property="og:description" content="Practical AI tools for local businesses and families, built on a data background: Power BI, SQL, Python, AWS.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zainadtani.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e14'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='36' font-weight='700' fill='%234da3ff' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
 <style>
   :root{
     --bg:#0a0e14;
@@ -114,6 +120,39 @@
   .foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--faint);font-size:.92rem}
   .foot a{color:var(--muted)}
 
+
+  /* Polish pack */
+  ::selection{background:var(--accent);color:var(--accent-ink)}
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+  section{scroll-margin-top:90px}
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(720px 420px at 18% -6%, rgba(77,163,255,.14), transparent 62%),
+      radial-gradient(640px 380px at 88% 4%, rgba(77,163,255,.08), transparent 60%);
+  }
+  .stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+  .stat{
+    border:1px solid var(--line);background:var(--bg-soft);border-radius:14px;
+    padding:12px 18px;font-size:.95rem;color:var(--muted);
+  }
+  .stat b{display:block;font-size:1.25rem;color:var(--text);line-height:1.2}
+  .card{box-shadow:0 0 0 rgba(77,163,255,0)}
+  .card:hover{box-shadow:0 12px 32px rgba(0,0,0,.35),0 0 0 1px rgba(77,163,255,.12)}
+  .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .js .reveal.in{opacity:1;transform:none}
+  #toTop{
+    position:fixed;right:22px;bottom:22px;z-index:20;width:46px;height:46px;border-radius:999px;
+    border:1px solid var(--line);background:var(--card);color:var(--text);font-size:1.15rem;cursor:pointer;
+    opacity:0;pointer-events:none;transition:opacity .25s ease,background .15s ease;
+  }
+  #toTop.show{opacity:1;pointer-events:auto}
+  #toTop:hover{background:var(--card-hover)}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .js .reveal{opacity:1;transform:none;transition:none}
+    *{transition:none !important}
+  }
   @media (max-width:640px){
     .hero{padding:64px 0 48px}
     .hero h1{font-size:2.4rem}
@@ -130,9 +169,12 @@
   <div class="wrap nav">
     <div class="brand">Zain Adtani<span>.</span></div>
     <nav class="nav-links">
-      <a href="https://zainadtani.com">zainadtani.com</a>
-      <a href="https://github.com/ZainAdtani">GitHub</a>
-      <a href="https://linkedin.com/in/zainadtani">LinkedIn</a>
+      <a href="#building">Building now</a>
+      <a href="#data">Data work</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/ZainAdtani" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/zainadtani" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
   </div>
 </header>
@@ -146,8 +188,13 @@
     <p class="sub">I build practical AI tools for local businesses and families, and I come from data: Power BI developer work, SQL, Python, and AWS.</p>
     <p class="loc">Dallas Fort Worth, Texas.</p>
     <div class="btn-row">
-      <a class="btn primary" href="https://zainadtani.com">See my business site</a>
-      <a class="btn" href="https://calendly.com/zkadtani/job">Book a call</a>
+      <a class="btn primary" href="https://zainadtani.com" target="_blank" rel="noopener">See my business site</a>
+      <a class="btn" href="https://calendly.com/zkadtani/job" target="_blank" rel="noopener">Book a call</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>5</b>live apps and tools</div>
+      <div class="stat"><b>6</b>Power BI dashboards</div>
+      <div class="stat"><b>3</b>day first AI win plan</div>
     </div>
   </div>
 
@@ -161,31 +208,31 @@
         <span class="tag">Free tool</span>
         <h3>Missed Call Money Calculator</h3>
         <p>A free tool that shows a local business what its missed calls cost every month.</p>
-        <a class="go" href="https://zainadtani.github.io/missed-call-calculator/">Try the calculator</a>
+        <a class="go" href="https://zainadtani.github.io/missed-call-calculator/" target="_blank" rel="noopener">Try the calculator</a>
       </div>
       <div class="card">
         <span class="tag">iPhone app</span>
         <h3>BuzzerBlock</h3>
         <p>An iPhone app that shows your teams scores without spoilers.</p>
-        <a class="go" href="https://apps.apple.com/app/id6832104995">View on the App Store</a>
+        <a class="go" href="https://apps.apple.com/app/id6832104995" target="_blank" rel="noopener">View on the App Store</a>
       </div>
       <div class="card">
         <span class="tag">iPhone app</span>
         <h3>NOMsters</h3>
         <p>A playful food adventure app for families.</p>
-        <a class="go" href="https://apps.apple.com/app/id6815714189">View on the App Store</a>
+        <a class="go" href="https://apps.apple.com/app/id6815714189" target="_blank" rel="noopener">View on the App Store</a>
       </div>
       <div class="card">
         <span class="tag">iPhone app</span>
         <h3>PathFolk</h3>
         <p>An app for guided reflection and journaling.</p>
-        <a class="go" href="https://apps.apple.com/app/pathfolk/id6818683420">View on the App Store</a>
+        <a class="go" href="https://apps.apple.com/app/pathfolk/id6818683420" target="_blank" rel="noopener">View on the App Store</a>
       </div>
       <div class="card">
         <span class="tag">iPhone app</span>
         <h3>Zigest</h3>
         <p>Turns long videos into short, clear digests.</p>
-        <a class="go" href="https://apps.apple.com/app/zigest-video-digests/id6834177603">View on the App Store</a>
+        <a class="go" href="https://apps.apple.com/app/zigest-video-digests/id6834177603" target="_blank" rel="noopener">View on the App Store</a>
       </div>
     </div>
   </section>
@@ -269,10 +316,10 @@
       <p>If you run a local business or lead a family and want practical AI help, or a clearer picture of your money, start with a short call.</p>
       <div class="btn-row">
         <a class="btn primary" href="mailto:zkadtani@gmail.com">Email me</a>
-        <a class="btn" href="https://calendly.com/zkadtani/job">Book a call</a>
-        <a class="btn" href="https://linkedin.com/in/zainadtani">LinkedIn</a>
-        <a class="btn" href="https://github.com/ZainAdtani">GitHub</a>
-        <a class="btn" href="https://zainadtani.com">zainadtani.com</a>
+        <a class="btn" href="https://calendly.com/zkadtani/job" target="_blank" rel="noopener">Book a call</a>
+        <a class="btn" href="https://linkedin.com/in/zainadtani" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/ZainAdtani" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://zainadtani.com" target="_blank" rel="noopener">zainadtani.com</a>
       </div>
     </div>
   </section>
@@ -282,9 +329,36 @@
 <footer>
   <div class="wrap foot">
     <span>© 2026 Zain Adtani</span>
-    <a href="https://zainadtani.com">zainadtani.com</a>
+    <span style="display:flex;gap:18px">
+      <a href="https://zainadtani.com" target="_blank" rel="noopener">zainadtani.com</a>
+      <a href="https://github.com/ZainAdtani" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/zainadtani" target="_blank" rel="noopener">LinkedIn</a>
+    </span>
   </div>
 </footer>
 
+<button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+<script>
+  document.documentElement.classList.add('js');
+  (function(){
+    var targets = document.querySelectorAll('section, .hero .stats, .contact');
+    targets.forEach(function(el){ el.classList.add('reveal'); });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {threshold: 0.08});
+      targets.forEach(function(el){ io.observe(el); });
+    } else {
+      targets.forEach(function(el){ el.classList.add('in'); });
+    }
+    var btn = document.getElementById('toTop');
+    window.addEventListener('scroll', function(){
+      if (window.scrollY > 600) { btn.classList.add('show'); } else { btn.classList.remove('show'); }
+    }, {passive: true});
+    btn.addEventListener('click', function(){ window.scrollTo({top: 0, behavior: 'smooth'}); });
+  })();
+</script>
 </body>
 </html>
